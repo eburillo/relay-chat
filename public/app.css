@@ -1,0 +1,149 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Verdana;
+  font-weight: lighter;
+  font-size: 15px;
+  margin: 0;
+  height: 100%;
+  color: #FFF;
+}
+
+#root {
+  height: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 90%;
+  width: 90%;
+  transform: translateY(5%);
+  max-width: 600px;
+  min-width: 320px;
+  background-color: #66B9BF;
+  border: 2px solid #E37222;
+  border-radius: 4px;
+}
+
+.item-counter {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(227, 114, 34, 0.85);
+  padding: 10px 15px;
+  border-bottom: 2px solid #E37222;
+}
+
+.item-counter--sentence {
+  color: #FFF;
+}
+
+.entry-list {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+}
+
+.entry {
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(227, 114, 34, 0.9);
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.avatar img {
+  max-width: 100%;
+}
+
+.entry-content {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(100% - 65px);
+}
+
+.entry-text {
+  width: calc(100% - 75px);
+  margin: 0;
+  line-height: 20px;
+  float: left;
+  line-height: 35px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.controls {
+
+}
+
+.controls--button {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  color: #777;
+}
+
+.controls--button:last-child {
+  margin-left: 5px;
+}
+
+.timestamp {
+  font-size: 11px;
+  float: right;
+}
+
+.input-text {
+  flex: 0 0 auto;
+  height: 40px;
+  line-height: 40px;
+  background-color: #008B95;
+  border: none;
+  border-top: 2px solid rgba(227, 114, 34, 1);
+  padding: 0 20px;
+  font-size: 14px;
+  color: #FFF;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFF;
+  opacity: 0.5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFF;
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFF;
+  opacity: 0.5
+
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #FFF;
+  opacity: 0.5;
+}
