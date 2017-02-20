@@ -91,6 +91,10 @@ var userType = new GraphQLObjectType({
         args
       ),
     },
+    totalCount: {
+      type: GraphQLInt,
+      resolve: () => getEntries().length,
+    },
   }),
   interfaces: [nodeInterface],
 });
@@ -107,6 +111,10 @@ var entryType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The text of the entry',
     },
+    date: {
+      type: GraphQLFloat,
+      description: 'The date of the entry'
+    }
   }),
   interfaces: [nodeInterface],
 });

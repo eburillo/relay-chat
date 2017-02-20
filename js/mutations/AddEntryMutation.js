@@ -2,6 +2,15 @@ import Relay from 'react-relay';
 
 export default class AddEntryMutation extends Relay.Mutation {
 
+  static fragments = {
+    viewer: () => Relay.QL`
+      fragment on User {
+        id,
+        totalCount,
+      }
+    `,
+  };
+
   getMutation() {
     return Relay.QL`mutation{ addEntry }`;
   }
@@ -18,6 +27,7 @@ export default class AddEntryMutation extends Relay.Mutation {
         entryEdge,
         viewer {
           entryConnection,
+          totalCount
         },
       }
     `;

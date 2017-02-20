@@ -18,7 +18,7 @@ class Entry extends React.Component {
           <p className="entry-text">{entry.text}</p>
           <Controls></Controls>
         </div>
-        <Timestamp></Timestamp>
+        <Timestamp entry={entry}></Timestamp>
       </div>
     );
   }
@@ -29,6 +29,7 @@ export default Relay.createContainer(Entry, {
     entry: () => Relay.QL`
       fragment on Entry {
         text,
+        ${Timestamp.getFragment('entry')}
       },
     `,
   },

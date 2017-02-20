@@ -9,10 +9,9 @@ class App extends React.Component {
 
   render() {
     let entries = this.props.viewer.entryConnection.edges;
-    console.log(entries);
     return (
       <div className="app-container">
-          <ItemCounter></ItemCounter>
+          <ItemCounter viewer={this.props.viewer}></ItemCounter>
           <ul className="entry-list">
             {entries.map(entry =>
               <Entry key={entry.node.id} entry={entry.node}></Entry>
@@ -30,7 +29,6 @@ class App extends React.Component {
         viewer: this.props.viewer
       })
     );
-    console.log(text);
   };
 
 }
@@ -51,7 +49,8 @@ export default Relay.createContainer(App, {
             }
           },
         },
-
+        ${ItemCounter.getFragment('viewer')},
+        ${AddEntryMutation.getFragment('viewer')},
       }
     `,
   },

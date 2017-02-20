@@ -26,8 +26,8 @@ function addEntry(text) {
   const entry = new Entry();
   entry.id = `${nextEntryId++}`;
   entry.text = text;
+  entry.date = Date.now();
   entries.push(entry);
-  console.log(entry);
   return entry.id;
 }
 
