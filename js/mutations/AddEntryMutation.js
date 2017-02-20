@@ -23,7 +23,7 @@ export default class AddEntryMutation extends Relay.Mutation {
 
   getFatQuery() {
     return Relay.QL`
-      fragment on AddEntryPayload {
+      fragment on AddEntryPayload @relay(pattern: true){
         entryEdge,
         viewer {
           entryConnection,

@@ -28,7 +28,7 @@ function addEntry(text) {
   entry.text = text;
   entry.date = Date.now();
   entries.push(entry);
-  return entry.id;
+  return entry;
 }
 
 module.exports = {

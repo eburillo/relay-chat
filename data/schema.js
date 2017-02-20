@@ -152,24 +152,21 @@ const addEntryMutation = mutationWithClientMutationId({
   outputFields: {
     entryEdge: {
       type: entryConnection.edgeType,
-      resolve: (payload) => {
-        const entry = getEntry(payload.id);
+      resolve: (entry) => {
         return {
-          cursor: cursorForObjectInConnection(getEntries(), entry),
+          cursor: entry.id,
           node: entry,
         };
       }
     },
     viewer: {
       type: userType,
-      resolve: () => viewer
+      resolve: () => getViewer()
     }
   },
   mutateAndGetPayload: ({text}) => {
     const newEntry = addEntry(text);
-    return {
-      entryId: newEntry.id
-    };
+    return newEntry;
   },
 });
 
