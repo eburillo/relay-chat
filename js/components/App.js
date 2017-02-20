@@ -6,7 +6,6 @@ import InputText from './InputText';
 import AddEntryMutation from '../mutations/AddEntryMutation';
 
 class App extends React.Component {
-
   render() {
     let entries = this.props.viewer.entryConnection.edges;
     return (
@@ -14,7 +13,7 @@ class App extends React.Component {
           <ItemCounter viewer={this.props.viewer}></ItemCounter>
           <ul className="entry-list">
             {entries.map(entry =>
-              <Entry key={entry.node.id} entry={entry.node}></Entry>
+              <Entry viewer={this.props.viewer} key={entry.node.id} entry={entry.node}></Entry>
             )}
           </ul>
           <InputText onSave={this._handleTextInputSave}></InputText>
@@ -27,10 +26,19 @@ class App extends React.Component {
       new AddEntryMutation({
         text,
         viewer: this.props.viewer
-      })
+      }), {
+        onSuccess: () => this.scrollDownList(),
+        onFailure: () => { console.log('Add Entry Mutation failed!'); }
+      }
     );
   };
 
+  scrollDownList = function() {
+    const elem = document.querySelector(".entry-list");
+    var timeout = setTimeout(function() {
+      elem.scrollTop += elem.scrollHeight;
+    }, 200);
+  }
 }
 
 export default Relay.createContainer(App, {

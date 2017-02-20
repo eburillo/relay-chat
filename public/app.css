@@ -51,11 +51,12 @@ body {
 .entry-list {
   flex: 1 1 auto;
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
   width: 100%;
   margin: 0;
   padding: 15px;
+  height: 1px;
+  overflow-y: auto;
 }
 
 .entry {
