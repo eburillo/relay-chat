@@ -114,6 +114,13 @@ body {
   margin-left: 5px;
 }
 
+.controls--button:hover {
+    color: black;
+    background-color: #Ddd;
+    transition: 0.3s all ease;
+}
+
+
 .timestamp {
   font-size: 11px;
   float: right;
