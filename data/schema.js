@@ -39,6 +39,7 @@ import {
   getEntry,
   getEntries,
   addEntry,
+  editEntry,
   removeEntry,
 } from './database';
 
@@ -171,6 +172,27 @@ const addEntryMutation = mutationWithClientMutationId({
   },
 });
 
+const editEntryMutation = mutationWithClientMutationId({
+  name: 'EditEntry',
+  inputFields: {
+    id: { type: new GraphQLNonNull(GraphQLID) },
+    text: { type: new GraphQLNonNull(GraphQLString)},
+  },
+  outputFields: {
+    entry: {
+      type: entryType,
+      resolve: (id) => getEntry(id),
+    },
+  },
+  mutateAndGetPayload: (id, text) => {
+    console.log("ID", id);
+    console.log("TEXT", text);
+    const entryId = fromGlobalId(id).id;
+    editEntry(entryId, text);
+    return entryId;
+  },
+});
+
 const removeEntryMutation = mutationWithClientMutationId({
   name: 'RemoveEntry',
   inputFields: {
@@ -201,6 +223,7 @@ var mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: () => ({
     addEntry: addEntryMutation,
+    editEntry: editEntryMutation,
     removeEntry: removeEntryMutation
   })
 });

@@ -33,6 +33,12 @@ function addEntry(text) {
   return entry;
 }
 
+function editEntry(id, text, date) {
+  const entry = getEntry(id);
+  entry.text = text;
+  entry.date = Date.now();
+}
+
 function removeEntry(id) {
   const entryIndex = entries.indexOf(id);
   if (entryIndex !== -1) {
@@ -58,5 +64,6 @@ module.exports = {
   User,
   Entry,
   addEntry: addEntry,
+  editEntry: editEntry,
   removeEntry: removeEntry
 };

@@ -16,7 +16,11 @@ class App extends React.Component {
               <Entry viewer={this.props.viewer} key={entry.node.id} entry={entry.node}></Entry>
             )}
           </ul>
-          <InputText onSave={this._handleTextInputSave}></InputText>
+          <InputText
+            type="add"
+            onSave={this._handleTextInputSave}
+            placeholder="What are you thinking?">
+          </InputText>
       </div>
     );
   }

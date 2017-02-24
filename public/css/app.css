@@ -11,10 +11,10 @@ html {
 body {
   font-family: Verdana;
   font-weight: lighter;
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   height: 100%;
-  color: #FFF;
+  color: #555;
 }
 
 #root {
@@ -30,22 +30,22 @@ body {
   transform: translateY(5%);
   max-width: 600px;
   min-width: 320px;
-  background-color: #66B9BF;
-  border: 2px solid #E37222;
-  border-radius: 4px;
+  background-color: #f2f2f2;
+  border: 2px solid #DDD;
+  border-radius: 6px;
 }
 
 .item-counter {
   flex: 0 0 auto;
-  width: 100%;
+  margin: auto;
+  width: 95%;
   height: 40px;
-  background-color: rgba(227, 114, 34, 0.85);
-  padding: 10px 15px;
-  border-bottom: 2px solid #E37222;
+  padding: 10px 5px;
+  border-bottom: 2px solid #DDD;
 }
 
 .item-counter--sentence {
-  color: #FFF;
+  font-size: 14px;
 }
 
 .entry-list {
@@ -54,20 +54,25 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 0;
-  padding: 15px;
+  padding: 20px 0;
   height: 1px;
   overflow-y: auto;
 }
 
 .entry {
-  margin-bottom: 10px;
+  padding: 15px 15px 10px 15px;
+}
+
+.entry:hover {
+  background-color: #FFF;
+  transition: 0.3s all ease;
 }
 
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgba(227, 114, 34, 0.9);
+  border: 3px solid #FFF;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -82,6 +87,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   width: calc(100% - 65px);
+  position: relative;
 }
 
 .entry-text {
@@ -93,6 +99,10 @@ body {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 .controls {
@@ -118,10 +128,9 @@ body {
 
 .controls--button:hover {
     color: black;
-    background-color: #Ddd;
+    background-color: #f2f2f2;
     transition: 0.3s all ease;
 }
-
 
 .timestamp {
   font-size: 11px;
@@ -130,30 +139,42 @@ body {
 
 .input-text {
   flex: 0 0 auto;
-  height: 40px;
+  height: 50px;
   line-height: 40px;
-  background-color: #008B95;
+  background-color: #FFF;
   border: none;
-  border-top: 2px solid rgba(227, 114, 34, 1);
+  border-top: 2px solid #DDD;
+  border-radius: 0 0 6px 6px;
   padding: 0 20px;
-  font-size: 14px;
-  color: #FFF;
+  font-size: 16px;
+}
+
+.input-text.edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 75px);
+    background-color: transparent;
+    line-height: 35px;
+    height: auto;
+    padding: 0;
+    border: 0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #FFF;
+  color: #888;
   opacity: 0.5;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #FFF;
+  color: #888;
   opacity: 0.5;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #FFF;
+  color: #888;
   opacity: 0.5
 
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #FFF;
+  color: #888;
   opacity: 0.5;
 }
