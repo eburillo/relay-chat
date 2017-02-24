@@ -1,6 +1,6 @@
-# Relay Starter Kit
+# Chat - Todo List based on Relay + React + GraphQL
 
-This kit includes an app server, a GraphQL server, and a transpiler that you can use to get started building an app with Relay. For a walkthrough, see the [Relay tutorial](https://facebook.github.io/relay/docs/tutorial.html).
+Project bootstrapped with Relay Starter Kit.  
 
 ## Installation
 
@@ -8,7 +8,7 @@ This kit includes an app server, a GraphQL server, and a transpiler that you can
 npm install
 ```
 
-## Running
+## Running App
 
 Start a local server:
 
@@ -16,19 +16,9 @@ Start a local server:
 npm start
 ```
 
-## Developing
-
-Any changes you make to files in the `js/` directory will cause the server to
-automatically rebuild the app and refresh your browser.
-
-If at any time you make changes to `data/schema.js`, stop the server,
-regenerate `data/schema.json`, and restart the server:
+## Run Tests
 
 ```
-npm run update-schema
-npm start
+npm test
 ```
-
-## License
-
-Relay Starter Kit is [BSD licensed](./LICENSE). We also provide an additional [patent grant](./PATENTS).
+```
