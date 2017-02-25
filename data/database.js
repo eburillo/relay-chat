@@ -36,10 +36,11 @@ function addEntry(text, date = Date.now()) {
   return entry;
 }
 
-function editEntry(id, text, date) {
+function editEntry(id, text) {
   const entry = getEntry(id);
   entry.text = text;
   entry.date = Date.now();
+  return entry;
 }
 
 function removeEntry(id) {

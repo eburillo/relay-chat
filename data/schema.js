@@ -181,15 +181,12 @@ const editEntryMutation = mutationWithClientMutationId({
   outputFields: {
     entry: {
       type: entryType,
-      resolve: (id) => getEntry(id),
+      resolve: (entry) => entry,
     },
   },
-  mutateAndGetPayload: (id, text) => {
-    console.log("ID", id);
-    console.log("TEXT", text);
-    const entryId = fromGlobalId(id).id;
-    editEntry(entryId, text);
-    return entryId;
+  mutateAndGetPayload: ({id, text}) => {
+    let entry = editEntry(parseInt(id), text);
+    return entry;
   },
 });
 

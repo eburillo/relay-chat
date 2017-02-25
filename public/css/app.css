@@ -71,12 +71,12 @@ body {
 .avatar {
   width: 50px;
   height: 50px;
+  margin-right: 5px;
   border-radius: 50%;
   border: 3px solid #FFF;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
-  margin-right: 15px;
 }
 
 .avatar img {
@@ -86,18 +86,18 @@ body {
 .entry-content {
   display: inline-block;
   vertical-align: middle;
-  width: calc(100% - 65px);
+  width: calc(100% - 55px);
   position: relative;
 }
 
 .entry-text {
   width: calc(100% - 75px);
+  display: inline-block;
+  vertical-align: middle;
   margin: 0;
+  padding-left: 15px;
+  padding-right: 10px;
   line-height: 20px;
-  float: left;
-  line-height: 35px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -106,7 +106,8 @@ body {
 }
 
 .controls {
-  float: right;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .controls--button {
@@ -159,6 +160,8 @@ body {
     height: auto;
     padding: 0;
     border: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

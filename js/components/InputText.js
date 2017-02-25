@@ -19,6 +19,7 @@ class InputText extends React.Component {
       <input
         className={inputClass}
         type="text"
+        autoFocus={true}
         placeholder={this.props.placeholder}
         onKeyDown={this._handleKeyDown}
         onChange={this._handleChange}

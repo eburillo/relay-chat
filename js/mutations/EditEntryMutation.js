@@ -11,12 +11,10 @@ export default class EditEntryMutation extends Relay.Mutation {
   };
 
   getMutation() {
-    console.log("get mut");
     return Relay.QL`mutation{ editEntry }`;
   }
 
   getVariables() {
-    console.log("get var");
     return {
       id: this.props.entry.id,
       text: this.props.text,
@@ -24,7 +22,6 @@ export default class EditEntryMutation extends Relay.Mutation {
   }
 
   getFatQuery() {
-    console.log("hoi");
     return Relay.QL`
       fragment on EditEntryPayload @relay(pattern: true){
         entry {
