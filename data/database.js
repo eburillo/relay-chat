@@ -19,15 +19,18 @@ viewer.avatar = "ballmer.png";
 const entries = [];
 const entriesById = {};
 let nextEntryId = 0;
+let fakeDateIncremental = 100000000;
+let fakeDateValue = Date.now() - fakeDateIncremental * 3;
 ['Prepare some dinner', 'Go to the post office', 'Speak with Trevor'].map((text, i) => {
-  addEntry(text);
+  addEntry(text, fakeDateValue);
+  fakeDateValue += fakeDateIncremental;
 });
 
-function addEntry(text) {
+function addEntry(text, date = Date.now()) {
   const entry = new Entry();
   entry.id = nextEntryId++;
   entry.text = text;
-  entry.date = Date.now();
+  entry.date = date;
   entriesById[entry.id] = entry;
   entries.push(entry.id);
   return entry;
