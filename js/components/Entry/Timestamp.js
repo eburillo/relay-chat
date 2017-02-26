@@ -5,7 +5,7 @@ import moment from 'moment';
 class Timestamp extends React.Component {
   render() {
     return (
-      <div className="timestamp">{moment(this.props.entry.date).fromNow()}</div>
+      <div className="timestamp">{moment(this.props.entry.date).format( 'DD/MM/YYYY HH:mm')}</div>
     );
   }
 }

@@ -7,7 +7,6 @@ export default class RemoveEntryMutation extends Relay.Mutation {
       fragment on User {
         id,
         totalCount,
-        entryConnection
       }
     `,
     entry: () => Relay.QL`

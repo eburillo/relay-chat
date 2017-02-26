@@ -63,6 +63,7 @@ export default Relay.createContainer(App, {
         },
         ${ItemCounter.getFragment('viewer')},
         ${AddEntryMutation.getFragment('viewer')},
+        ${Entry.getFragment('viewer')},
       }
     `,
   },

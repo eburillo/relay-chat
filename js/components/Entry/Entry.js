@@ -82,5 +82,10 @@ export default Relay.createContainer(Entry, {
         ${RemoveEntryMutation.getFragment('entry')},
       },
     `,
+    viewer:() => Relay.QL`
+      fragment on User {
+        ${RemoveEntryMutation.getFragment('viewer')},
+      }
+    `
   },
 });
