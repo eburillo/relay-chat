@@ -68,5 +68,3 @@ export default Relay.createContainer(App, {
     `,
   },
 });
-
-// ${AddEntryMutation.getFragment('viewer')}, TODO: add to fragment

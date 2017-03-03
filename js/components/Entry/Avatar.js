@@ -3,7 +3,7 @@ import Relay from 'react-relay';
 
 class Avatar extends React.Component {
   render() {
-    let imgSource = './assets/ballmer.png';
+    let imgSource = "./assets/" + this.props.viewer.avatar;
     return (
       <div className="avatar">
         <img src={imgSource} />
@@ -12,4 +12,12 @@ class Avatar extends React.Component {
   }
 }
 
-export default Avatar;
+export default Relay.createContainer(Avatar, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on User {
+        avatar,
+      },
+    `,
+  },
+});

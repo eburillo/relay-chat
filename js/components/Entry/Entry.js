@@ -22,7 +22,7 @@ class Entry extends React.Component {
     })
     return (
       <div className="entry">
-        <Avatar></Avatar>
+        <Avatar viewer={this.props.viewer}></Avatar>
         <div className="entry-content">
           <p className={textFieldClasses}>{entry.text}</p>
           {this.state.isEditing && this._renderTextInput()}
@@ -84,6 +84,7 @@ export default Relay.createContainer(Entry, {
     `,
     viewer:() => Relay.QL`
       fragment on User {
+        ${Avatar.getFragment('viewer')},
         ${RemoveEntryMutation.getFragment('viewer')},
       }
     `
